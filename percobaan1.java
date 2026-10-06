@@ -31,7 +31,7 @@ public class percobaan1 {
             System.out.println("Kembalian: " + kembalian);
         } else {
             kurang = totalBayar - uangBayar;
-            System.out.println("Uang tidak cukup, kurang Rp" + kurang);
+            System.out.println("Uang tidak cukup, Kurang Rp" + kurang);
         }
 
 
