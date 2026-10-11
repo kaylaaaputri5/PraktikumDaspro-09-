@@ -4,16 +4,15 @@ public class StudiKasus2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        String nama, jenis;
+        String nama, jenisKegiatan;
         int jumlahDokumen, peringkat, statusPkm;
 
-        // Input data umum
         System.out.print("Nama mahasiswa  : ");
         nama = sc.nextLine();
-        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA) : ");
-        jenis = sc.nextLine();
+        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA): ");
+        jenisKegiatan = sc.nextLine();
 
-        if (jenis.equalsIgnoreCase("BELMAWA") || jenis.equalsIgnoreCase("BAKORMA") || jenis.equalsIgnoreCase("MANDIRI")) {
+        if (jenisKegiatan.equalsIgnoreCase("BELMAWA") || jenisKegiatan.equalsIgnoreCase("BAKORMA") || jenisKegiatan.equalsIgnoreCase("MANDIRI")) {
             System.out.print("Jumlah dokumen  : ");
             jumlahDokumen = sc.nextInt();
             System.out.print("Peringkat juara : ");
@@ -29,6 +28,25 @@ public class StudiKasus2 {
                 System.out.println("Status : Tidak memperoleh dana penghargaan (hanya untuk Juara 1/2/3).");
             }
 
-        } 
+        } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
+            System.out.print("Jumlah dokumen  : ");
+            jumlahDokumen = sc.nextInt();
+            System.out.print("Status pendanaan PKM (1 = lolos, 0 = tidak lolos) : ");
+            statusPkm = sc.nextInt();
+
+            if (statusPkm == 1) {
+                if (jumlahDokumen == 4) {
+                    System.out.println("Status : Berhak memperoleh dana penghargaan (PKM lolos pendanaan).");
+                } else {
+                    System.out.println("Status : Dokumen tidak lengkap (kurang " + (4 - jumlahDokumen) + " dokumen). Dana penghargaan tidak diberikan.");
+                }
+            } else {
+                System.out.println("Status : Tidak memperoleh dana penghargaan (PKM tidak lolos pendanaan).");
+            }
+
+        } else {
+            System.out.println("Status: Tidak memperoleh dana penghargaan (jenis kegiatan tidak termasuk ke dalam semua ketentuan).");
+        }
+        sc.close();
     }
 }
