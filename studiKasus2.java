@@ -45,7 +45,7 @@ public class StudiKasus2 {
             }
 
         } else {
-            System.out.println("Status: Tidak memperoleh dana penghargaan (jenis kegiatan tidak termasuk ke dalam semua ketentuan).");
+            System.out.println("Status: Tidak memperoleh dana penghargaan (Jenis kegiatan tidak termasuk ke dalam semua ketentuan).");
         }
         sc.close();
     }
