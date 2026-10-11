@@ -15,7 +15,7 @@ public class StudiKasus2 {
         if (jenisKegiatan.equalsIgnoreCase("BELMAWA") || jenisKegiatan.equalsIgnoreCase("BAKORMA") || jenisKegiatan.equalsIgnoreCase("MANDIRI")) {
             System.out.println("Jumlah dokumen: ");
             jumlahDokumen = sc.nextInt();
-            System.out.println("Peringkat juara: ");
+            System.out.println("Peringkat Juara: ");
             peringkat = sc.nextInt();
 
             if (peringkat >= 1 && peringkat <= 3) {
